@@ -32,7 +32,7 @@ def create_team(request):
         new_team.save()
         return Response(status =200)
     elif request.method == 'GET':
-        poketeams = Poketeam.objects.all()
+        poketeams = Poketeam.objects.all()[::-1]
         serializer = PoketeamSerializer(poketeams,many=True,context={'request':request})
         teams =[]
         for team in poketeams:
