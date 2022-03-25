@@ -26,6 +26,7 @@ from animals import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('animals.urls'))
+    path('',include('animals.urls')),
+    path('v2/',include('poketeam.urls'))
     
 ]
