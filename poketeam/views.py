@@ -8,6 +8,8 @@ from poketeam.serializers import PokemonSerializer,PoketeamSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import permissions
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
 import json
 
@@ -55,3 +57,23 @@ def create_team(request):
                 }
             )
         return Response(teams)
+
+@api_view(['POST'])
+def register(request):
+    """
+        Custom Funtion to create user
+    """
+
+    body = json.loads(request.body)
+
+    username=body["username"]
+    password=body["password"]
+
+    user = User(username=username,password=password)
+
+    user.save()
+    userResponse=User.objects.get(username=username)
+    print(userResponse)
+    token=Token.objects.get(user=userResponse)
+
+    return Response({"token":token.key})
