@@ -35,7 +35,19 @@ def create_team(request):
             pokemon= Pokemon.objects.get(id=p_id)
             new_team.pokemons.add(pokemon)
         new_team.save()
-        return Response(status =200)
+
+        pokemons=new_team.pokemons.all()
+
+        poke_list=[]
+        for pokemon in pokemons:
+            poke_list.append({
+                'name':pokemon.name,
+                'sprite':pokemon.sprite,
+                'types':pokemon.types
+            })
+
+        serializer=PoketeamSerializer(new_team,many=False,context={'request':request})
+        return Response(status =200,data={'name':pack['name'],'pokemons':poke_list})
 
     elif request.method == 'GET':
         poketeams = Poketeam.objects.filter(owner=request.user)
