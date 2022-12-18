@@ -24,7 +24,8 @@ def create_team(request):
     if request.method =='POST':
         print(request.body)
         pack = (json.loads(request.body))
-        pokemons_ids=json.loads(pack['pokemons'])
+        #pokemons_ids=json.loads(pack['pokemons'])
+        pokemons_ids=pack['pokemons']
         new_team = Poketeam(name=pack['name'])
         new_team.owner=request.user
         new_team.save()
