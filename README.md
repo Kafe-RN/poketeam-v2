@@ -1,5 +1,5 @@
-# CuriousAnimals
-api em django rest (v3.11.1)
+# Poketeam v2
+API em django rest (v3.11.1)
 
 
 Pré Requisitos:
@@ -8,50 +8,49 @@ Pré Requisitos:
 Como instalar
     No Linux utilize o seguinte
 
-    ```
-      -> python3 -m venv .venv
+```
+  -> python3 -m venv .venv
 
-    ```
+```
 
-    Em seguinte entre no ambiente utilizando o comando
+Em seguinte entre no ambiente utilizando o comando
 
-    ```
-      -> source .venv/bin/activate
-    ```
-
-
-    Após isso instale as dependencias
+```
+source .venv/bin/activate
+```
 
 
-    ```
-      -> pip install -r requirements.txt
-
-    ```
+Após isso instale as dependencias
 
 
-    rode as migrações utilizando o comando
+```
+pip install -r requirements.txt
+
+```
 
 
-    ```
-      -> python manage.py migrate
-
-    ```
-
-        rode o Seed com o comando
+Rode as migrações utilizando o comando
 
 
-    ```
-      -> python manage.py seed
+```
+python manage.py migrate
 
-    ```
+```
 
-      rode o sistema localmente utilizando o comando
+Rode o Seed com o comando
 
-    ```
-      -> python manage.py runserver
 
-    ```
+```
+python manage.py seed
 
-    O sistema estará rodando em https://localhost:8000
+```
+Rode o sistema localmente utilizando o comando
 
-    para saber como utilizar a API acesse o Guiá de rotas
+```
+  python manage.py runserver
+
+```
+
+O sistema estará rodando em https://localhost:8000
+
+para saber como utilizar a API acesse o Guiá de rotas
