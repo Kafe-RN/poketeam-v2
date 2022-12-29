@@ -84,10 +84,14 @@ def register(request):
     username=body["username"]
     password=body["password"]
 
-    user = User(username=username,password=password)
+    print(type(password))
+    user = User(username=username)
+    user.set_password(password)
 
     user.save()
     userResponse=User.objects.get(username=username)
+
+    print(userResponse.check_password(password))
     print(userResponse)
     token=Token.objects.get(user=userResponse)
 
