@@ -50,6 +50,9 @@ def create_team(request):
         return Response(status =200,data={'name':pack['name'],'pokemons':poke_list})
 
     elif request.method == 'GET':
+        print("mostrando o user")
+        print(request.headers)
+        print(request.user)
         poketeams = Poketeam.objects.filter(owner=request.user)
 
         serializer = PoketeamSerializer(poketeams,many=True,context={'request':request})

@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
-
 from rest_framework import routers
 from animals import views 
+
 
 
 
@@ -27,6 +26,7 @@ from animals import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('animals.urls')),
-    path('v2/',include('poketeam.urls'))
+    path('v2/',include('poketeam.urls')),
+   
     
 ]

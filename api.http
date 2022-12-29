@@ -1,0 +1,28 @@
+@base_url=http://localhost:8000/v2/
+###
+POST {{base_url}}login
+Content-Type: application/json
+
+{
+ "username":"lowliet64",
+ "password":"1234"
+
+}
+
+
+###
+POST  {{base_url}}login/refresh
+Content-Type: application/json
+
+{
+ "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MjM2MDg4OSwiaWF0IjoxNjcyMjc0NDg5LCJqdGkiOiI2MWY3ODQxMTQzZDE0NDllYWQzMWM2Y2QwNzQ5ZThkNCIsInVzZXJfaWQiOjN9.rFJ1Hg4NHDZB8EicI1nGY5_CexM1-lk8q6Tm2o4fNZc"
+
+}
+
+
+###
+GET {{base_url}}teams
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyMjc1NzQxLCJpYXQiOjE2NzIyNzQ0ODksImp0aSI6IjM1ZDlhMjhmYjkxNTQ3YzA5ODExMWI5ODI1YmRjOWM1IiwidXNlcl9pZCI6M30.svRxVE4CeqbmySl8M9Tsol5MoO9iA2R9U5l15AnkPMc
+
+
